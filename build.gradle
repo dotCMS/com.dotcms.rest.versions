@@ -1,0 +1,47 @@
+plugins {
+    id 'biz.aQute.bnd.builder' version '3.3.0'
+}
+
+sourceCompatibility = '1.8'
+version = '0.1'
+
+repositories {
+    maven { url "http://repo.dotcms.com/artifactory/libs-release" }
+}
+
+configurations {
+    osgiLibs
+}
+sourceSets {
+    generated {
+        java {
+            srcDir "/Users/will/git/dotcms5/tomcat8/webapps/ROOT/WEB-INF/classes"
+        }
+    }
+}
+dependencies {
+    compile fileTree(dir: "/Users/will/git/dotcms5/snapshot", include: "*.jar")
+
+}
+
+jar {
+    manifest {
+        attributes (
+                'Bundle-Vendor': 'dotCMS',
+                'Bundle-Description': 'dotCMS - Rest Versions example',
+                'Bundle-DocURL': 'https://dotcms.com/',
+                'Bundle-Activator': 'com.dotcms.plugin.rest.Activator',
+                'DynamicImport-Package': '*',
+
+               'Export-Package': '''
+                com.dotcms.repackage.javax.ws.rs.*
+
+
+            '''
+        )
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.2'
+}

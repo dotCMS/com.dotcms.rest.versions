@@ -20,8 +20,9 @@ sourceSets {
     }
 }
 dependencies {
-    compile fileTree(dir: "/Users/will/git/dotcms5/snapshot", include: "*.jar")
-
+    compile (group: 'com.dotcms', name: 'dotcms', version: '4.3.3'){
+        transitive = true
+    }
 }
 
 jar {
@@ -34,8 +35,8 @@ jar {
                 'DynamicImport-Package': '*',
 
                'Export-Package': '''
-                com.dotcms.repackage.javax.ws.rs.*
-
+                com.dotcms.repackage.javax.ws.rs.*,
+com.dotcms.repackage.org.apache.commons.io.*
 
             '''
         )

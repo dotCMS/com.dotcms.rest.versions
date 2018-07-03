@@ -1,9 +1,11 @@
 package com.dotcms.plugin.rest;
 
-import org.osgi.framework.BundleContext;
 import com.dotcms.rest.config.RestServiceUtil;
+
 import com.dotmarketing.osgi.GenericBundleActivator;
 import com.dotmarketing.util.Logger;
+
+import org.osgi.framework.BundleContext;
 
 public class Activator extends GenericBundleActivator {
 

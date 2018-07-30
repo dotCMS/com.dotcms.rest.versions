@@ -15,12 +15,14 @@ public class Activator extends GenericBundleActivator {
 
 		Logger.info(this.getClass(), "Adding new Restful Service:" + clazz.getSimpleName());
 		RestServiceUtil.addResource(clazz);
+
 	}
 
 	public void stop(BundleContext context) throws Exception {
 
 		Logger.info(this.getClass(), "Removing new Restful Service:" + clazz.getSimpleName());
 		RestServiceUtil.removeResource(clazz);
+
 	}
 
 }

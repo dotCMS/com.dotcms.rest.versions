@@ -1,4 +1,8 @@
-# Versions as a Service
+# Archived
+
+See: https://github.com/dotcms-plugins/plugin-dotcms-rest-versions
+
+## Versions as a Service
 ----
 This REST endpoint returns the version history of a given peice of content
 
